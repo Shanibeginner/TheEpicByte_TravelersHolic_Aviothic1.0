@@ -109,7 +109,7 @@ function autoReply() {
 	console.log(userMessage);
 
 
-let greet ;
+    let greet ;
 
 	if(userMessage.includes('hi')){
 			greet = "Nice to chat with you sir/ma'am ! Which city do You want to go ? ";
@@ -134,7 +134,7 @@ let greet ;
 
 	}
 	else{
-		response = "I ";
+		response = "Good evening sir/maa'm ! How can i help you !";
 	}
 
 	let messageresponse = `
