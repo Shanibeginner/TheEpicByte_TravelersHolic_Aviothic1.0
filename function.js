@@ -115,7 +115,7 @@ let greet ;
 			greet = "Nice to chat with you sir/ma'am ! Which city do You want to go ? ";
 	}
 	else{
-		greet = "Nice ";
+		greet = "Good evening sir/maa'm ! How can i help you ! ";
 	}
 
 	let messagegreet = `
@@ -126,31 +126,53 @@ let greet ;
             <span class="chatbox-message-item-time">${addZero(today.getHours())}:${addZero(today.getMinutes())}</span>
         </div>
     `;
-	
-	
 
+	let response;
 
+	if(userMessage.includes('Rajasthan')){
+		response = "I am chat bot";
 
-	let reply;
+	}
+	else{
+		response = "I ";
+	}
 
-    if (userMessage.includes('tourist places') || userMessage.includes('jammu')) {
-        reply = "Some popular tourist places in Jammu are Raghunath Temple, Bahu Fort, and Amar Mahal Palace.";
-    } else if (userMessage.includes('jammu')) {
-        reply = "Jammu is known for its rich cultural heritage and beautiful landscapes.";
-    } else {
-        reply = "Welcome to Make my trip! How can I assist you today?";
-    }
-
-	let message1 = `
+	let messageresponse = `
         <div class="chatbox-message-item received">
             <span class="chatbox-message-item-text">
-               ${reply}
+               ${response}
             </span>
             <span class="chatbox-message-item-time">${addZero(today.getHours())}:${addZero(today.getMinutes())}</span>
         </div>
     `;
+	
+	
+	
 
-    chatboxMessageWrapper.insertAdjacentHTML('beforeend', messagegreet);
+
+
+	// let reply;
+
+    // if (userMessage.includes('tourist places') || userMessage.includes('jammu')) {
+    //     reply = "Some popular tourist places in Jammu are Raghunath Temple, Bahu Fort, and Amar Mahal Palace.";
+    // } else if (userMessage.includes('jammu')) {
+    //     reply = "Jammu is known for its rich cultural heritage and beautiful landscapes.";
+    // } else {
+    //     reply = "Welcome to Make my trip! How can I assist you today?";
+    // }
+
+	// let message1 = `
+    //     <div class="chatbox-message-item received">
+    //         <span class="chatbox-message-item-text">
+    //            ${reply}
+    //         </span>
+    //         <span class="chatbox-message-item-time">${addZero(today.getHours())}:${addZero(today.getMinutes())}</span>
+    //     </div>
+    // `;
+
+    // chatboxMessageWrapper.insertAdjacentHTML('beforeend', messagegreet);
+	chatboxMessageWrapper.insertAdjacentHTML('beforeend', messageresponse);
+
 	scrollBottom();
    
 }
